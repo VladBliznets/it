@@ -1,0 +1,13 @@
+C:\Users\igor\source\repos\SUBDForm\SUBDLab\bin\Debug\SUBDLab.dll
+C:\Users\igor\source\repos\SUBDForm\SUBDLab\bin\Debug\SUBDLab.pdb
+C:\Users\igor\source\repos\SUBDForm\SUBDLab\obj\Debug\SUBDLab.csproj.AssemblyReference.cache
+C:\Users\igor\source\repos\SUBDForm\SUBDLab\obj\Debug\SUBDLab.csproj.CoreCompileInputs.cache
+C:\Users\igor\source\repos\SUBDForm\SUBDLab\obj\Debug\SUBDLab.dll
+C:\Users\igor\source\repos\SUBDForm\SUBDLab\obj\Debug\SUBDLab.pdb
+C:\Users\igor\source\repos\SUBDServer\SUBDLab\bin\Debug\SUBDLab.dll
+C:\Users\igor\source\repos\SUBDServer\SUBDLab\bin\Debug\SUBDLab.pdb
+C:\Users\igor\source\repos\SUBDServer\SUBDLab\obj\Debug\SUBDLab.csproj.AssemblyReference.cache
+C:\Users\igor\source\repos\SUBDServer\SUBDLab\obj\Debug\SUBDLab.csproj.CoreCompileInputs.cache
+C:\Users\igor\source\repos\SUBDServer\SUBDLab\obj\Debug\SUBDLab.dll
+C:\Users\igor\source\repos\SUBDServer\SUBDLab\obj\Debug\SUBDLab.pdb
+C:\Users\igor\source\repos\SUBDServer\SUBDLab\bin\Debug\SUBDLab.dll.config

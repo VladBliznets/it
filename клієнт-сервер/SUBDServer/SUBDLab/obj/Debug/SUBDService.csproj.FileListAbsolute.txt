@@ -1,0 +1,7 @@
+C:\Users\igor\source\repos\SUBDServer\SUBDLab\obj\Debug\SUBDService.csproj.AssemblyReference.cache
+C:\Users\igor\source\repos\SUBDServer\SUBDLab\obj\Debug\SUBDService.csproj.CoreCompileInputs.cache
+C:\Users\igor\source\repos\SUBDServer\SUBDLab\obj\Debug\SUBDLab.dll
+C:\Users\igor\source\repos\SUBDServer\SUBDLab\obj\Debug\SUBDLab.pdb
+C:\Users\igor\source\repos\SUBDServer\SUBDLab\bin\Debug\SUBDLab.dll.config
+C:\Users\igor\source\repos\SUBDServer\SUBDLab\bin\Debug\SUBDLab.dll
+C:\Users\igor\source\repos\SUBDServer\SUBDLab\bin\Debug\SUBDLab.pdb

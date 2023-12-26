@@ -1,0 +1,875 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="DBMenu" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_ISUBDService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISUBDService_OpenNew_InputMessage">
+    <wsdl:part name="parameters" element="tns:OpenNew" />
+  </wsdl:message>
+  <wsdl:message name="ISUBDService_OpenNew_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OpenNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISUBDService_OpenBase_InputMessage">
+    <wsdl:part name="parameters" element="tns:OpenBase" />
+  </wsdl:message>
+  <wsdl:message name="ISUBDService_OpenBase_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OpenBaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISUBDService_BaseOpened_InputMessage">
+    <wsdl:part name="parameters" element="tns:BaseOpened" />
+  </wsdl:message>
+  <wsdl:message name="ISUBDService_BaseOpened_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BaseOpenedResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISUBDService_TableOpened_InputMessage">
+    <wsdl:part name="parameters" element="tns:TableOpened" />
+  </wsdl:message>
+  <wsdl:message name="ISUBDService_TableOpened_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TableOpenedResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISUBDService_RowsInTable_InputMessage">
+    <wsdl:part name="parameters" element="tns:RowsInTable" />
+  </wsdl:message>
+  <wsdl:message name="ISUBDService_RowsInTable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RowsInTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISUBDService_ColumnsInTable_InputMessage">
+    <wsdl:part name="parameters" element="tns:ColumnsInTable" />
+  </wsdl:message>
+  <wsdl:message name="ISUBDService_ColumnsInTable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ColumnsInTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISUBDService_GetNameInCurrentTable_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNameInCurrentTable" />
+  </wsdl:message>
+  <wsdl:message name="ISUBDService_GetNameInCurrentTable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNameInCurrentTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISUBDService_GetTypeInCurrentTable_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTypeInCurrentTable" />
+  </wsdl:message>
+  <wsdl:message name="ISUBDService_GetTypeInCurrentTable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTypeInCurrentTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISUBDService_GetValueInTable_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetValueInTable" />
+  </wsdl:message>
+  <wsdl:message name="ISUBDService_GetValueInTable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetValueInTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISUBDService_GetNumberOfTables_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNumberOfTables" />
+  </wsdl:message>
+  <wsdl:message name="ISUBDService_GetNumberOfTables_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNumberOfTablesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISUBDService_GetNumberOfFieldsInTable_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNumberOfFieldsInTable" />
+  </wsdl:message>
+  <wsdl:message name="ISUBDService_GetNumberOfFieldsInTable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNumberOfFieldsInTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISUBDService_GetTableName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTableName" />
+  </wsdl:message>
+  <wsdl:message name="ISUBDService_GetTableName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTableNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISUBDService_GetNameInTable_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNameInTable" />
+  </wsdl:message>
+  <wsdl:message name="ISUBDService_GetNameInTable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNameInTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISUBDService_GetTypeInTable_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTypeInTable" />
+  </wsdl:message>
+  <wsdl:message name="ISUBDService_GetTypeInTable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTypeInTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISUBDService_ChangeCurrentTable_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeCurrentTable" />
+  </wsdl:message>
+  <wsdl:message name="ISUBDService_ChangeCurrentTable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeCurrentTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISUBDService_BaseHasPath_InputMessage">
+    <wsdl:part name="parameters" element="tns:BaseHasPath" />
+  </wsdl:message>
+  <wsdl:message name="ISUBDService_BaseHasPath_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BaseHasPathResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISUBDService_Changed_InputMessage">
+    <wsdl:part name="parameters" element="tns:Changed" />
+  </wsdl:message>
+  <wsdl:message name="ISUBDService_Changed_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangedResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISUBDService_Save_InputMessage">
+    <wsdl:part name="parameters" element="tns:Save" />
+  </wsdl:message>
+  <wsdl:message name="ISUBDService_Save_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISUBDService_getAllFiles_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAllFiles" />
+  </wsdl:message>
+  <wsdl:message name="ISUBDService_getAllFiles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllFilesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISUBDService_SaveAs_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveAs" />
+  </wsdl:message>
+  <wsdl:message name="ISUBDService_SaveAs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveAsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISUBDService_CreateTable_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateTable" />
+  </wsdl:message>
+  <wsdl:message name="ISUBDService_CreateTable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISUBDService_OpenTable_InputMessage">
+    <wsdl:part name="parameters" element="tns:OpenTable" />
+  </wsdl:message>
+  <wsdl:message name="ISUBDService_OpenTable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OpenTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISUBDService_DeleteTable_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTable" />
+  </wsdl:message>
+  <wsdl:message name="ISUBDService_DeleteTable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISUBDService_AddRow_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddRow" />
+  </wsdl:message>
+  <wsdl:message name="ISUBDService_AddRow_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddRowResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISUBDService_DeleteRows_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRows" />
+  </wsdl:message>
+  <wsdl:message name="ISUBDService_DeleteRows_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRowsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISUBDService_ChangeRowValue_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeRowValue" />
+  </wsdl:message>
+  <wsdl:message name="ISUBDService_ChangeRowValue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeRowValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISUBDService_GetPath_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPath" />
+  </wsdl:message>
+  <wsdl:message name="ISUBDService_GetPath_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPathResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISUBDService_Union_InputMessage">
+    <wsdl:part name="parameters" element="tns:Union" />
+  </wsdl:message>
+  <wsdl:message name="ISUBDService_Union_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISUBDService_Close_InputMessage">
+    <wsdl:part name="parameters" element="tns:Close" />
+  </wsdl:message>
+  <wsdl:message name="ISUBDService_Close_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CloseResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ISUBDService">
+    <wsdl:operation name="OpenNew">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISUBDService/OpenNew" message="tns:ISUBDService_OpenNew_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISUBDService/OpenNewResponse" message="tns:ISUBDService_OpenNew_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OpenBase">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISUBDService/OpenBase" message="tns:ISUBDService_OpenBase_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISUBDService/OpenBaseResponse" message="tns:ISUBDService_OpenBase_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BaseOpened">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISUBDService/BaseOpened" message="tns:ISUBDService_BaseOpened_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISUBDService/BaseOpenedResponse" message="tns:ISUBDService_BaseOpened_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TableOpened">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISUBDService/TableOpened" message="tns:ISUBDService_TableOpened_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISUBDService/TableOpenedResponse" message="tns:ISUBDService_TableOpened_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RowsInTable">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISUBDService/RowsInTable" message="tns:ISUBDService_RowsInTable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISUBDService/RowsInTableResponse" message="tns:ISUBDService_RowsInTable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ColumnsInTable">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISUBDService/ColumnsInTable" message="tns:ISUBDService_ColumnsInTable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISUBDService/ColumnsInTableResponse" message="tns:ISUBDService_ColumnsInTable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNameInCurrentTable">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISUBDService/GetNameInCurrentTable" message="tns:ISUBDService_GetNameInCurrentTable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISUBDService/GetNameInCurrentTableResponse" message="tns:ISUBDService_GetNameInCurrentTable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTypeInCurrentTable">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISUBDService/GetTypeInCurrentTable" message="tns:ISUBDService_GetTypeInCurrentTable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISUBDService/GetTypeInCurrentTableResponse" message="tns:ISUBDService_GetTypeInCurrentTable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetValueInTable">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISUBDService/GetValueInTable" message="tns:ISUBDService_GetValueInTable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISUBDService/GetValueInTableResponse" message="tns:ISUBDService_GetValueInTable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNumberOfTables">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISUBDService/GetNumberOfTables" message="tns:ISUBDService_GetNumberOfTables_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISUBDService/GetNumberOfTablesResponse" message="tns:ISUBDService_GetNumberOfTables_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNumberOfFieldsInTable">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISUBDService/GetNumberOfFieldsInTable" message="tns:ISUBDService_GetNumberOfFieldsInTable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISUBDService/GetNumberOfFieldsInTableResponse" message="tns:ISUBDService_GetNumberOfFieldsInTable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTableName">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISUBDService/GetTableName" message="tns:ISUBDService_GetTableName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISUBDService/GetTableNameResponse" message="tns:ISUBDService_GetTableName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNameInTable">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISUBDService/GetNameInTable" message="tns:ISUBDService_GetNameInTable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISUBDService/GetNameInTableResponse" message="tns:ISUBDService_GetNameInTable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTypeInTable">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISUBDService/GetTypeInTable" message="tns:ISUBDService_GetTypeInTable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISUBDService/GetTypeInTableResponse" message="tns:ISUBDService_GetTypeInTable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeCurrentTable">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISUBDService/ChangeCurrentTable" message="tns:ISUBDService_ChangeCurrentTable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISUBDService/ChangeCurrentTableResponse" message="tns:ISUBDService_ChangeCurrentTable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BaseHasPath">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISUBDService/BaseHasPath" message="tns:ISUBDService_BaseHasPath_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISUBDService/BaseHasPathResponse" message="tns:ISUBDService_BaseHasPath_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Changed">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISUBDService/Changed" message="tns:ISUBDService_Changed_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISUBDService/ChangedResponse" message="tns:ISUBDService_Changed_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Save">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISUBDService/Save" message="tns:ISUBDService_Save_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISUBDService/SaveResponse" message="tns:ISUBDService_Save_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllFiles">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISUBDService/getAllFiles" message="tns:ISUBDService_getAllFiles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISUBDService/getAllFilesResponse" message="tns:ISUBDService_getAllFiles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveAs">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISUBDService/SaveAs" message="tns:ISUBDService_SaveAs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISUBDService/SaveAsResponse" message="tns:ISUBDService_SaveAs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateTable">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISUBDService/CreateTable" message="tns:ISUBDService_CreateTable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISUBDService/CreateTableResponse" message="tns:ISUBDService_CreateTable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OpenTable">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISUBDService/OpenTable" message="tns:ISUBDService_OpenTable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISUBDService/OpenTableResponse" message="tns:ISUBDService_OpenTable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTable">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISUBDService/DeleteTable" message="tns:ISUBDService_DeleteTable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISUBDService/DeleteTableResponse" message="tns:ISUBDService_DeleteTable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRow">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISUBDService/AddRow" message="tns:ISUBDService_AddRow_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISUBDService/AddRowResponse" message="tns:ISUBDService_AddRow_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRows">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISUBDService/DeleteRows" message="tns:ISUBDService_DeleteRows_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISUBDService/DeleteRowsResponse" message="tns:ISUBDService_DeleteRows_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeRowValue">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISUBDService/ChangeRowValue" message="tns:ISUBDService_ChangeRowValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISUBDService/ChangeRowValueResponse" message="tns:ISUBDService_ChangeRowValue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPath">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISUBDService/GetPath" message="tns:ISUBDService_GetPath_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISUBDService/GetPathResponse" message="tns:ISUBDService_GetPath_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Union">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISUBDService/Union" message="tns:ISUBDService_Union_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISUBDService/UnionResponse" message="tns:ISUBDService_Union_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Close">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISUBDService/Close" message="tns:ISUBDService_Close_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISUBDService/CloseResponse" message="tns:ISUBDService_Close_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ISUBDService" type="tns:ISUBDService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="OpenNew">
+      <soap:operation soapAction="http://tempuri.org/ISUBDService/OpenNew" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpenBase">
+      <soap:operation soapAction="http://tempuri.org/ISUBDService/OpenBase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BaseOpened">
+      <soap:operation soapAction="http://tempuri.org/ISUBDService/BaseOpened" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TableOpened">
+      <soap:operation soapAction="http://tempuri.org/ISUBDService/TableOpened" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RowsInTable">
+      <soap:operation soapAction="http://tempuri.org/ISUBDService/RowsInTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ColumnsInTable">
+      <soap:operation soapAction="http://tempuri.org/ISUBDService/ColumnsInTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNameInCurrentTable">
+      <soap:operation soapAction="http://tempuri.org/ISUBDService/GetNameInCurrentTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTypeInCurrentTable">
+      <soap:operation soapAction="http://tempuri.org/ISUBDService/GetTypeInCurrentTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetValueInTable">
+      <soap:operation soapAction="http://tempuri.org/ISUBDService/GetValueInTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNumberOfTables">
+      <soap:operation soapAction="http://tempuri.org/ISUBDService/GetNumberOfTables" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNumberOfFieldsInTable">
+      <soap:operation soapAction="http://tempuri.org/ISUBDService/GetNumberOfFieldsInTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTableName">
+      <soap:operation soapAction="http://tempuri.org/ISUBDService/GetTableName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNameInTable">
+      <soap:operation soapAction="http://tempuri.org/ISUBDService/GetNameInTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTypeInTable">
+      <soap:operation soapAction="http://tempuri.org/ISUBDService/GetTypeInTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeCurrentTable">
+      <soap:operation soapAction="http://tempuri.org/ISUBDService/ChangeCurrentTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BaseHasPath">
+      <soap:operation soapAction="http://tempuri.org/ISUBDService/BaseHasPath" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Changed">
+      <soap:operation soapAction="http://tempuri.org/ISUBDService/Changed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save">
+      <soap:operation soapAction="http://tempuri.org/ISUBDService/Save" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllFiles">
+      <soap:operation soapAction="http://tempuri.org/ISUBDService/getAllFiles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveAs">
+      <soap:operation soapAction="http://tempuri.org/ISUBDService/SaveAs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTable">
+      <soap:operation soapAction="http://tempuri.org/ISUBDService/CreateTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpenTable">
+      <soap:operation soapAction="http://tempuri.org/ISUBDService/OpenTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTable">
+      <soap:operation soapAction="http://tempuri.org/ISUBDService/DeleteTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRow">
+      <soap:operation soapAction="http://tempuri.org/ISUBDService/AddRow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRows">
+      <soap:operation soapAction="http://tempuri.org/ISUBDService/DeleteRows" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeRowValue">
+      <soap:operation soapAction="http://tempuri.org/ISUBDService/ChangeRowValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPath">
+      <soap:operation soapAction="http://tempuri.org/ISUBDService/GetPath" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Union">
+      <soap:operation soapAction="http://tempuri.org/ISUBDService/Union" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Close">
+      <soap:operation soapAction="http://tempuri.org/ISUBDService/Close" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_ISUBDService" type="tns:ISUBDService">
+    <wsp:PolicyReference URI="#NetTcpBinding_ISUBDService_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="OpenNew">
+      <soap12:operation soapAction="http://tempuri.org/ISUBDService/OpenNew" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpenBase">
+      <soap12:operation soapAction="http://tempuri.org/ISUBDService/OpenBase" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BaseOpened">
+      <soap12:operation soapAction="http://tempuri.org/ISUBDService/BaseOpened" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TableOpened">
+      <soap12:operation soapAction="http://tempuri.org/ISUBDService/TableOpened" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RowsInTable">
+      <soap12:operation soapAction="http://tempuri.org/ISUBDService/RowsInTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ColumnsInTable">
+      <soap12:operation soapAction="http://tempuri.org/ISUBDService/ColumnsInTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNameInCurrentTable">
+      <soap12:operation soapAction="http://tempuri.org/ISUBDService/GetNameInCurrentTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTypeInCurrentTable">
+      <soap12:operation soapAction="http://tempuri.org/ISUBDService/GetTypeInCurrentTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetValueInTable">
+      <soap12:operation soapAction="http://tempuri.org/ISUBDService/GetValueInTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNumberOfTables">
+      <soap12:operation soapAction="http://tempuri.org/ISUBDService/GetNumberOfTables" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNumberOfFieldsInTable">
+      <soap12:operation soapAction="http://tempuri.org/ISUBDService/GetNumberOfFieldsInTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTableName">
+      <soap12:operation soapAction="http://tempuri.org/ISUBDService/GetTableName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNameInTable">
+      <soap12:operation soapAction="http://tempuri.org/ISUBDService/GetNameInTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTypeInTable">
+      <soap12:operation soapAction="http://tempuri.org/ISUBDService/GetTypeInTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeCurrentTable">
+      <soap12:operation soapAction="http://tempuri.org/ISUBDService/ChangeCurrentTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BaseHasPath">
+      <soap12:operation soapAction="http://tempuri.org/ISUBDService/BaseHasPath" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Changed">
+      <soap12:operation soapAction="http://tempuri.org/ISUBDService/Changed" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save">
+      <soap12:operation soapAction="http://tempuri.org/ISUBDService/Save" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllFiles">
+      <soap12:operation soapAction="http://tempuri.org/ISUBDService/getAllFiles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveAs">
+      <soap12:operation soapAction="http://tempuri.org/ISUBDService/SaveAs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTable">
+      <soap12:operation soapAction="http://tempuri.org/ISUBDService/CreateTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpenTable">
+      <soap12:operation soapAction="http://tempuri.org/ISUBDService/OpenTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTable">
+      <soap12:operation soapAction="http://tempuri.org/ISUBDService/DeleteTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRow">
+      <soap12:operation soapAction="http://tempuri.org/ISUBDService/AddRow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRows">
+      <soap12:operation soapAction="http://tempuri.org/ISUBDService/DeleteRows" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeRowValue">
+      <soap12:operation soapAction="http://tempuri.org/ISUBDService/ChangeRowValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPath">
+      <soap12:operation soapAction="http://tempuri.org/ISUBDService/GetPath" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Union">
+      <soap12:operation soapAction="http://tempuri.org/ISUBDService/Union" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Close">
+      <soap12:operation soapAction="http://tempuri.org/ISUBDService/Close" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DBMenu">
+    <wsdl:port name="BasicHttpBinding_ISUBDService" binding="tns:BasicHttpBinding_ISUBDService">
+      <soap:address location="http://localhost:8080/SUBDService.DBMenu" />
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_ISUBDService" binding="tns:NetTcpBinding_ISUBDService">
+      <soap12:address location="net.tcp://localhost:45000/SUBDService.DBMenu" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:45000/SUBDService.DBMenu</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>DESKTOP-N0D5OUV\igor</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
