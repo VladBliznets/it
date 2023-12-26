@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "dgSpecHash": "zGmHEIICx/x0lrdYNwIZJ+eDx5nk0N10Roz8qyjgNvW45J+VdcSeUqmk5sAxDLzQ3hKK1rPF3JICjDtTMJEUYw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\igor\\source\\repos\\GrpcService\\Form\\Formclient.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\igor\\.nuget\\packages\\google.protobuf\\3.24.4\\google.protobuf.3.24.4.nupkg.sha512",
+    "C:\\Users\\igor\\.nuget\\packages\\grpc.core.api\\2.58.0\\grpc.core.api.2.58.0.nupkg.sha512",
+    "C:\\Users\\igor\\.nuget\\packages\\grpc.net.client\\2.58.0\\grpc.net.client.2.58.0.nupkg.sha512",
+    "C:\\Users\\igor\\.nuget\\packages\\grpc.net.clientfactory\\2.58.0\\grpc.net.clientfactory.2.58.0.nupkg.sha512",
+    "C:\\Users\\igor\\.nuget\\packages\\grpc.net.common\\2.58.0\\grpc.net.common.2.58.0.nupkg.sha512",
+    "C:\\Users\\igor\\.nuget\\packages\\grpc.tools\\2.59.0\\grpc.tools.2.59.0.nupkg.sha512",
+    "C:\\Users\\igor\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.0\\microsoft.extensions.dependencyinjection.6.0.0.nupkg.sha512",
+    "C:\\Users\\igor\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\igor\\.nuget\\packages\\microsoft.extensions.http\\6.0.0\\microsoft.extensions.http.6.0.0.nupkg.sha512",
+    "C:\\Users\\igor\\.nuget\\packages\\microsoft.extensions.logging\\6.0.0\\microsoft.extensions.logging.6.0.0.nupkg.sha512",
+    "C:\\Users\\igor\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\igor\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
+    "C:\\Users\\igor\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\igor\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
+    "C:\\Users\\igor\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

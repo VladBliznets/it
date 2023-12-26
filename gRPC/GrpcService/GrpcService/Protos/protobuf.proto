@@ -1,0 +1,65 @@
+syntax="proto3";
+import "google/protobuf/empty.proto";
+option java_package="org.example";
+option java_multiple_files =  true;
+option csharp_namespace = "GrpcService.Protos";
+service SUBDServiceGRPC{
+	rpc OpenNew(google.protobuf.Empty) returns (google.protobuf.Empty);
+    rpc OpenBase(onlystring) returns (oneindex);
+    rpc BaseOpened(google.protobuf.Empty) returns (logical);
+    rpc TableOpened(google.protobuf.Empty) returns (logical);
+    rpc RowsInTable(google.protobuf.Empty) returns (oneindex);
+    rpc ColumnsInTable(google.protobuf.Empty) returns (oneindex);
+    rpc GetNameInCurrentTable(oneindex) returns (onlystring);
+    rpc GetTypeInCurrentTable(oneindex) returns (onlystring);
+    rpc GetValueInTable(twoindex) returns (onlystring);
+    rpc GetNumberOfTables(google.protobuf.Empty) returns (oneindex);
+    rpc GetNumberOfFieldsInTable(oneindex) returns (oneindex);
+    rpc GetTableName(oneindex) returns (onlystring);
+    rpc GetCurrentTableName(google.protobuf.Empty) returns (onlystring);
+    rpc GetNameInTable(twoindex) returns (onlystring);
+    rpc GetTypeInTable(twoindex) returns (onlystring);
+    rpc ChangeCurrentTable(oneindex) returns (oneindex);
+    rpc BaseHasPath(google.protobuf.Empty) returns (logical);
+    rpc Changed(google.protobuf.Empty) returns (logical);
+    rpc Save(google.protobuf.Empty) returns (oneindex);
+    rpc getAllFiles(google.protobuf.Empty) returns (onlystring);
+    rpc SaveAs(onlystring) returns (oneindex);
+    rpc CreateTable(table) returns (oneindex);
+    rpc OpenTable(onlystring) returns (oneindex);
+    rpc DeleteTable(onlystring) returns (oneindex);
+    rpc AddRow(google.protobuf.Empty) returns (google.protobuf.Empty);
+    rpc DeleteRows(twoindex) returns (oneindex);
+    rpc ChangeRowValue(changevalue) returns (oneindex);
+    rpc GetPath(google.protobuf.Empty) returns (onlystring);
+    rpc Union(union) returns (oneindex);
+    rpc Close(google.protobuf.Empty) returns (google.protobuf.Empty);
+}
+
+message onlystring{
+	string ar=1;
+}
+message oneindex{
+	int32 ar=1;
+}
+message twoindex{
+	int32 ar1=1;
+	int32 ar2=2;
+}
+message table{
+	string name=1;
+	repeated string names=2;
+	repeated string types=3;
+}
+message changevalue{
+	int32 i=1;
+	int32 j=2;
+	string val=3;
+}
+message union{
+	string name=1;
+	repeated string args=2;
+}
+message logical{
+    bool ans=1;
+}

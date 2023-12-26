@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option csharp_namespace = "Servicemanegepolicyclient.Protos";
+
+package policy;
+
+import "google/protobuf/empty.proto";
+
+service PolicyServiceGRPC{
+	rpc GetAllPolicies(google.protobuf.Empty) returns (stream PolicyReply){};
+	rpc GetSinglePolicy(PolicyRequest) returns (PolicyReply){};
+}
+
+message PolicyRequest{
+	int32 PolicyIdx=1;
+}
+message PolicyReply{
+	int32 PolicyIdx=1;
+	string Reference=2;
+	string PolicyHolder=3;
+}
