@@ -1,0 +1,1229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="OpenNew">
+        <s:complexType />
+      </s:element>
+      <s:element name="OpenNewResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="OpenBase">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Path" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OpenBaseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="OpenBaseResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BaseOpened">
+        <s:complexType />
+      </s:element>
+      <s:element name="BaseOpenedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BaseOpenedResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TableOpened">
+        <s:complexType />
+      </s:element>
+      <s:element name="TableOpenedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TableOpenedResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RowsInTable">
+        <s:complexType />
+      </s:element>
+      <s:element name="RowsInTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RowsInTableResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ColumnsInTable">
+        <s:complexType />
+      </s:element>
+      <s:element name="ColumnsInTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ColumnsInTableResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNameInCurrentTable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="i" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNameInCurrentTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNameInCurrentTableResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTypeInCurrentTable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="i" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTypeInCurrentTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTypeInCurrentTableResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetValueInTable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="i" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="j" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetValueInTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetValueInTableResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNumberOfTables">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetNumberOfTablesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetNumberOfTablesResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNumberOfFieldsInTable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="i" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNumberOfFieldsInTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetNumberOfFieldsInTableResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTableName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="i" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTableNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTableNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCurrentTableName">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCurrentTableNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCurrentTableNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNameInTable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="i" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="j" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNameInTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNameInTableResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTypeInTable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="i" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="j" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTypeInTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTypeInTableResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeCurrentTable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="i" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeCurrentTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ChangeCurrentTableResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BaseHasPath">
+        <s:complexType />
+      </s:element>
+      <s:element name="BaseHasPathResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BaseHasPathResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Changed">
+        <s:complexType />
+      </s:element>
+      <s:element name="ChangedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ChangedResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Save">
+        <s:complexType />
+      </s:element>
+      <s:element name="SaveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAllFiles">
+        <s:complexType />
+      </s:element>
+      <s:element name="getAllFilesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAllFilesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveAs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Path" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveAsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveAsResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateTable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="arrNames" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="arrTypes" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CreateTableResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OpenTable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OpenTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="OpenTableResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteTable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteTableResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddRow">
+        <s:complexType />
+      </s:element>
+      <s:element name="AddRowResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeleteRows">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PosRow" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="num" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteRowsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteRowsResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeRowValue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RowPos" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ColumnPos" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="value" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeRowValueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ChangeRowValueResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPath">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetPathResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPathResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Union">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Inputargs" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UnionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UnionResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Close">
+        <s:complexType />
+      </s:element>
+      <s:element name="CloseResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="OpenNewSoapIn">
+    <wsdl:part name="parameters" element="tns:OpenNew" />
+  </wsdl:message>
+  <wsdl:message name="OpenNewSoapOut">
+    <wsdl:part name="parameters" element="tns:OpenNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="OpenBaseSoapIn">
+    <wsdl:part name="parameters" element="tns:OpenBase" />
+  </wsdl:message>
+  <wsdl:message name="OpenBaseSoapOut">
+    <wsdl:part name="parameters" element="tns:OpenBaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="BaseOpenedSoapIn">
+    <wsdl:part name="parameters" element="tns:BaseOpened" />
+  </wsdl:message>
+  <wsdl:message name="BaseOpenedSoapOut">
+    <wsdl:part name="parameters" element="tns:BaseOpenedResponse" />
+  </wsdl:message>
+  <wsdl:message name="TableOpenedSoapIn">
+    <wsdl:part name="parameters" element="tns:TableOpened" />
+  </wsdl:message>
+  <wsdl:message name="TableOpenedSoapOut">
+    <wsdl:part name="parameters" element="tns:TableOpenedResponse" />
+  </wsdl:message>
+  <wsdl:message name="RowsInTableSoapIn">
+    <wsdl:part name="parameters" element="tns:RowsInTable" />
+  </wsdl:message>
+  <wsdl:message name="RowsInTableSoapOut">
+    <wsdl:part name="parameters" element="tns:RowsInTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="ColumnsInTableSoapIn">
+    <wsdl:part name="parameters" element="tns:ColumnsInTable" />
+  </wsdl:message>
+  <wsdl:message name="ColumnsInTableSoapOut">
+    <wsdl:part name="parameters" element="tns:ColumnsInTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNameInCurrentTableSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNameInCurrentTable" />
+  </wsdl:message>
+  <wsdl:message name="GetNameInCurrentTableSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNameInCurrentTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTypeInCurrentTableSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTypeInCurrentTable" />
+  </wsdl:message>
+  <wsdl:message name="GetTypeInCurrentTableSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTypeInCurrentTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetValueInTableSoapIn">
+    <wsdl:part name="parameters" element="tns:GetValueInTable" />
+  </wsdl:message>
+  <wsdl:message name="GetValueInTableSoapOut">
+    <wsdl:part name="parameters" element="tns:GetValueInTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNumberOfTablesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNumberOfTables" />
+  </wsdl:message>
+  <wsdl:message name="GetNumberOfTablesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNumberOfTablesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNumberOfFieldsInTableSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNumberOfFieldsInTable" />
+  </wsdl:message>
+  <wsdl:message name="GetNumberOfFieldsInTableSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNumberOfFieldsInTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTableNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTableName" />
+  </wsdl:message>
+  <wsdl:message name="GetTableNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTableNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentTableNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCurrentTableName" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentTableNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCurrentTableNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNameInTableSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNameInTable" />
+  </wsdl:message>
+  <wsdl:message name="GetNameInTableSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNameInTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTypeInTableSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTypeInTable" />
+  </wsdl:message>
+  <wsdl:message name="GetTypeInTableSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTypeInTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangeCurrentTableSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangeCurrentTable" />
+  </wsdl:message>
+  <wsdl:message name="ChangeCurrentTableSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangeCurrentTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="BaseHasPathSoapIn">
+    <wsdl:part name="parameters" element="tns:BaseHasPath" />
+  </wsdl:message>
+  <wsdl:message name="BaseHasPathSoapOut">
+    <wsdl:part name="parameters" element="tns:BaseHasPathResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangedSoapIn">
+    <wsdl:part name="parameters" element="tns:Changed" />
+  </wsdl:message>
+  <wsdl:message name="ChangedSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangedResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveSoapIn">
+    <wsdl:part name="parameters" element="tns:Save" />
+  </wsdl:message>
+  <wsdl:message name="SaveSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllFilesSoapIn">
+    <wsdl:part name="parameters" element="tns:getAllFiles" />
+  </wsdl:message>
+  <wsdl:message name="getAllFilesSoapOut">
+    <wsdl:part name="parameters" element="tns:getAllFilesResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveAsSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveAs" />
+  </wsdl:message>
+  <wsdl:message name="SaveAsSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveAsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateTableSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateTable" />
+  </wsdl:message>
+  <wsdl:message name="CreateTableSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="OpenTableSoapIn">
+    <wsdl:part name="parameters" element="tns:OpenTable" />
+  </wsdl:message>
+  <wsdl:message name="OpenTableSoapOut">
+    <wsdl:part name="parameters" element="tns:OpenTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteTableSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteTable" />
+  </wsdl:message>
+  <wsdl:message name="DeleteTableSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddRowSoapIn">
+    <wsdl:part name="parameters" element="tns:AddRow" />
+  </wsdl:message>
+  <wsdl:message name="AddRowSoapOut">
+    <wsdl:part name="parameters" element="tns:AddRowResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteRowsSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteRows" />
+  </wsdl:message>
+  <wsdl:message name="DeleteRowsSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteRowsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangeRowValueSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangeRowValue" />
+  </wsdl:message>
+  <wsdl:message name="ChangeRowValueSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangeRowValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPathSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPath" />
+  </wsdl:message>
+  <wsdl:message name="GetPathSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPathResponse" />
+  </wsdl:message>
+  <wsdl:message name="UnionSoapIn">
+    <wsdl:part name="parameters" element="tns:Union" />
+  </wsdl:message>
+  <wsdl:message name="UnionSoapOut">
+    <wsdl:part name="parameters" element="tns:UnionResponse" />
+  </wsdl:message>
+  <wsdl:message name="CloseSoapIn">
+    <wsdl:part name="parameters" element="tns:Close" />
+  </wsdl:message>
+  <wsdl:message name="CloseSoapOut">
+    <wsdl:part name="parameters" element="tns:CloseResponse" />
+  </wsdl:message>
+  <wsdl:portType name="DBMenuSoap">
+    <wsdl:operation name="OpenNew">
+      <wsdl:input message="tns:OpenNewSoapIn" />
+      <wsdl:output message="tns:OpenNewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OpenBase">
+      <wsdl:input message="tns:OpenBaseSoapIn" />
+      <wsdl:output message="tns:OpenBaseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BaseOpened">
+      <wsdl:input message="tns:BaseOpenedSoapIn" />
+      <wsdl:output message="tns:BaseOpenedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TableOpened">
+      <wsdl:input message="tns:TableOpenedSoapIn" />
+      <wsdl:output message="tns:TableOpenedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RowsInTable">
+      <wsdl:input message="tns:RowsInTableSoapIn" />
+      <wsdl:output message="tns:RowsInTableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ColumnsInTable">
+      <wsdl:input message="tns:ColumnsInTableSoapIn" />
+      <wsdl:output message="tns:ColumnsInTableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNameInCurrentTable">
+      <wsdl:input message="tns:GetNameInCurrentTableSoapIn" />
+      <wsdl:output message="tns:GetNameInCurrentTableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTypeInCurrentTable">
+      <wsdl:input message="tns:GetTypeInCurrentTableSoapIn" />
+      <wsdl:output message="tns:GetTypeInCurrentTableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetValueInTable">
+      <wsdl:input message="tns:GetValueInTableSoapIn" />
+      <wsdl:output message="tns:GetValueInTableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNumberOfTables">
+      <wsdl:input message="tns:GetNumberOfTablesSoapIn" />
+      <wsdl:output message="tns:GetNumberOfTablesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNumberOfFieldsInTable">
+      <wsdl:input message="tns:GetNumberOfFieldsInTableSoapIn" />
+      <wsdl:output message="tns:GetNumberOfFieldsInTableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTableName">
+      <wsdl:input message="tns:GetTableNameSoapIn" />
+      <wsdl:output message="tns:GetTableNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentTableName">
+      <wsdl:input message="tns:GetCurrentTableNameSoapIn" />
+      <wsdl:output message="tns:GetCurrentTableNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNameInTable">
+      <wsdl:input message="tns:GetNameInTableSoapIn" />
+      <wsdl:output message="tns:GetNameInTableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTypeInTable">
+      <wsdl:input message="tns:GetTypeInTableSoapIn" />
+      <wsdl:output message="tns:GetTypeInTableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeCurrentTable">
+      <wsdl:input message="tns:ChangeCurrentTableSoapIn" />
+      <wsdl:output message="tns:ChangeCurrentTableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BaseHasPath">
+      <wsdl:input message="tns:BaseHasPathSoapIn" />
+      <wsdl:output message="tns:BaseHasPathSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Changed">
+      <wsdl:input message="tns:ChangedSoapIn" />
+      <wsdl:output message="tns:ChangedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Save">
+      <wsdl:input message="tns:SaveSoapIn" />
+      <wsdl:output message="tns:SaveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllFiles">
+      <wsdl:input message="tns:getAllFilesSoapIn" />
+      <wsdl:output message="tns:getAllFilesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveAs">
+      <wsdl:input message="tns:SaveAsSoapIn" />
+      <wsdl:output message="tns:SaveAsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateTable">
+      <wsdl:input message="tns:CreateTableSoapIn" />
+      <wsdl:output message="tns:CreateTableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OpenTable">
+      <wsdl:input message="tns:OpenTableSoapIn" />
+      <wsdl:output message="tns:OpenTableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTable">
+      <wsdl:input message="tns:DeleteTableSoapIn" />
+      <wsdl:output message="tns:DeleteTableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRow">
+      <wsdl:input message="tns:AddRowSoapIn" />
+      <wsdl:output message="tns:AddRowSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRows">
+      <wsdl:input message="tns:DeleteRowsSoapIn" />
+      <wsdl:output message="tns:DeleteRowsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeRowValue">
+      <wsdl:input message="tns:ChangeRowValueSoapIn" />
+      <wsdl:output message="tns:ChangeRowValueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPath">
+      <wsdl:input message="tns:GetPathSoapIn" />
+      <wsdl:output message="tns:GetPathSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Union">
+      <wsdl:input message="tns:UnionSoapIn" />
+      <wsdl:output message="tns:UnionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Close">
+      <wsdl:input message="tns:CloseSoapIn" />
+      <wsdl:output message="tns:CloseSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DBMenuSoap" type="tns:DBMenuSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="OpenNew">
+      <soap:operation soapAction="http://tempuri.org/OpenNew" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpenBase">
+      <soap:operation soapAction="http://tempuri.org/OpenBase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BaseOpened">
+      <soap:operation soapAction="http://tempuri.org/BaseOpened" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TableOpened">
+      <soap:operation soapAction="http://tempuri.org/TableOpened" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RowsInTable">
+      <soap:operation soapAction="http://tempuri.org/RowsInTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ColumnsInTable">
+      <soap:operation soapAction="http://tempuri.org/ColumnsInTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNameInCurrentTable">
+      <soap:operation soapAction="http://tempuri.org/GetNameInCurrentTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTypeInCurrentTable">
+      <soap:operation soapAction="http://tempuri.org/GetTypeInCurrentTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetValueInTable">
+      <soap:operation soapAction="http://tempuri.org/GetValueInTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNumberOfTables">
+      <soap:operation soapAction="http://tempuri.org/GetNumberOfTables" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNumberOfFieldsInTable">
+      <soap:operation soapAction="http://tempuri.org/GetNumberOfFieldsInTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTableName">
+      <soap:operation soapAction="http://tempuri.org/GetTableName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentTableName">
+      <soap:operation soapAction="http://tempuri.org/GetCurrentTableName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNameInTable">
+      <soap:operation soapAction="http://tempuri.org/GetNameInTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTypeInTable">
+      <soap:operation soapAction="http://tempuri.org/GetTypeInTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeCurrentTable">
+      <soap:operation soapAction="http://tempuri.org/ChangeCurrentTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BaseHasPath">
+      <soap:operation soapAction="http://tempuri.org/BaseHasPath" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Changed">
+      <soap:operation soapAction="http://tempuri.org/Changed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save">
+      <soap:operation soapAction="http://tempuri.org/Save" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllFiles">
+      <soap:operation soapAction="http://tempuri.org/getAllFiles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveAs">
+      <soap:operation soapAction="http://tempuri.org/SaveAs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTable">
+      <soap:operation soapAction="http://tempuri.org/CreateTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpenTable">
+      <soap:operation soapAction="http://tempuri.org/OpenTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTable">
+      <soap:operation soapAction="http://tempuri.org/DeleteTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRow">
+      <soap:operation soapAction="http://tempuri.org/AddRow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRows">
+      <soap:operation soapAction="http://tempuri.org/DeleteRows" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeRowValue">
+      <soap:operation soapAction="http://tempuri.org/ChangeRowValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPath">
+      <soap:operation soapAction="http://tempuri.org/GetPath" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Union">
+      <soap:operation soapAction="http://tempuri.org/Union" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Close">
+      <soap:operation soapAction="http://tempuri.org/Close" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DBMenuSoap12" type="tns:DBMenuSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="OpenNew">
+      <soap12:operation soapAction="http://tempuri.org/OpenNew" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpenBase">
+      <soap12:operation soapAction="http://tempuri.org/OpenBase" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BaseOpened">
+      <soap12:operation soapAction="http://tempuri.org/BaseOpened" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TableOpened">
+      <soap12:operation soapAction="http://tempuri.org/TableOpened" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RowsInTable">
+      <soap12:operation soapAction="http://tempuri.org/RowsInTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ColumnsInTable">
+      <soap12:operation soapAction="http://tempuri.org/ColumnsInTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNameInCurrentTable">
+      <soap12:operation soapAction="http://tempuri.org/GetNameInCurrentTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTypeInCurrentTable">
+      <soap12:operation soapAction="http://tempuri.org/GetTypeInCurrentTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetValueInTable">
+      <soap12:operation soapAction="http://tempuri.org/GetValueInTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNumberOfTables">
+      <soap12:operation soapAction="http://tempuri.org/GetNumberOfTables" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNumberOfFieldsInTable">
+      <soap12:operation soapAction="http://tempuri.org/GetNumberOfFieldsInTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTableName">
+      <soap12:operation soapAction="http://tempuri.org/GetTableName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentTableName">
+      <soap12:operation soapAction="http://tempuri.org/GetCurrentTableName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNameInTable">
+      <soap12:operation soapAction="http://tempuri.org/GetNameInTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTypeInTable">
+      <soap12:operation soapAction="http://tempuri.org/GetTypeInTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeCurrentTable">
+      <soap12:operation soapAction="http://tempuri.org/ChangeCurrentTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BaseHasPath">
+      <soap12:operation soapAction="http://tempuri.org/BaseHasPath" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Changed">
+      <soap12:operation soapAction="http://tempuri.org/Changed" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save">
+      <soap12:operation soapAction="http://tempuri.org/Save" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllFiles">
+      <soap12:operation soapAction="http://tempuri.org/getAllFiles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveAs">
+      <soap12:operation soapAction="http://tempuri.org/SaveAs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTable">
+      <soap12:operation soapAction="http://tempuri.org/CreateTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpenTable">
+      <soap12:operation soapAction="http://tempuri.org/OpenTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTable">
+      <soap12:operation soapAction="http://tempuri.org/DeleteTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRow">
+      <soap12:operation soapAction="http://tempuri.org/AddRow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRows">
+      <soap12:operation soapAction="http://tempuri.org/DeleteRows" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeRowValue">
+      <soap12:operation soapAction="http://tempuri.org/ChangeRowValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPath">
+      <soap12:operation soapAction="http://tempuri.org/GetPath" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Union">
+      <soap12:operation soapAction="http://tempuri.org/Union" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Close">
+      <soap12:operation soapAction="http://tempuri.org/Close" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DBMenu">
+    <wsdl:port name="DBMenuSoap" binding="tns:DBMenuSoap">
+      <soap:address location="https://localhost:44398/DBMenu.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DBMenuSoap12" binding="tns:DBMenuSoap12">
+      <soap12:address location="https://localhost:44398/DBMenu.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
